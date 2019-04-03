@@ -1,0 +1,9 @@
+Package: vsrfit
+Title: Rules with Variable Sparsity for Survival Analysis, Classification and Regression
+Version: 0.0.1
+Authors@R: person("Ameer Hamza", "Shakur", email = "hamzaisameer@gmail.com", role = c("aut", "cre"))
+Description: We provide a method to fit rules with (optional) sparsity among the variables for survival, regression and classification data. This package provides functions for: extracting rules from randomforests, building ruledata, fitting regularized models to data to obtain sparse section of rules, fit rules with variable level sparsity, extract significant rules, carry out significance and decomposition analysis for rules, formatting rules in latex.
+Depends: R (>= 3.5.3)
+License: 
+Encoding: UTF-8
+LazyData: true
