@@ -1,0 +1,57 @@
+---
+title: "How to use vsRfit"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## How to use the vsrFit 
+In this example, we show how to use vsrFit with the help of an example. We the ovarian data from the survival package to show this: 
+
+### Required Packages
+```{r}
+library(survival)
+library(ranger)
+library(osqp)
+```
+
+### Load and process the ovarian data
+```{r}
+data("ovarian")
+ovarian$resid.ds <- as.factor(ovarian$resid.ds)
+ovarian$rx <- as.factor(ovarian$rx)
+ovarian$ecog.ps <- as.factor(ovarian$ecog.ps)
+newdata <- ovarian
+remove(ovarian)
+```
+
+Now load the installed vsrFit package and run the following commands:
+```{r}
+library(vsrfit)
+formula = Surv(futime,fustat)~.
+rules.obj <- get_rules(formula, newdata, ntree = 200)
+rdata.obj <- create_ruledata(rules.obj)
+rdata<-rdata.obj$rdata
+model <- vsrfit(rdata.obj, gamma = 0.001, lambda1 = c(2,3))
+```
+
+Get the regression coefficients and final rules:
+```{r pressure, echo=FALSE}
+beta <- model$beta
+rules <- model$rules
+```
+
+```{r}
+rules[1:5]
+```
+
+```{r}
+#beta[1] is the coefficient of the intercept
+beta[1:5]
+```
+
+
+
