@@ -69,7 +69,7 @@ vsrfit <- function(rdata.obj,
 
     }else{
       # var.sparse = TRUE
-      stop('Rules sparse in variables will be implemented in near future; Please set var.sparse = TRUE')
+      stop('Rules sparse in variables will be implemented in near future; Please set var.sparse = FALSE')
     }
 
     # list out the top so many rules? how is this number decided? n.toprules along with rulenumbers!
