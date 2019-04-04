@@ -1,6 +1,9 @@
 ---
 title: "How to use vsRfit"
-output: pdf_document
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
 ---
 
 ```{r setup, include=FALSE}
@@ -39,7 +42,7 @@ model <- vsrfit(rdata.obj, gamma = 0.001, lambda1 = c(2,3))
 ```
 
 Get the regression coefficients and final rules:
-```{r pressure, echo=FALSE}
+```{r}
 beta <- model$beta
 rules <- model$rules
 ```
@@ -53,5 +56,5 @@ rules[1:5]
 beta[1:5]
 ```
 
-
+The first item in beta is the coefficient of the intercept of the regression, and the others are coefficients of each of the rules in model$rules.
 
