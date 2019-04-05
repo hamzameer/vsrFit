@@ -1,5 +1,5 @@
 ---
-title: "How to use vsRfit"
+title: "How to use vsrfit"
 output:
   pdf_document: default
   html_document:
@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-## How to use the vsrFit 
+## How to use the vsrfit package to fit rules to survival data
 In this example, we show how to use vsrFit with the help of an example. We the ovarian data from the survival package to show this: 
 
 ### Required Packages
