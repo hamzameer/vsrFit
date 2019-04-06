@@ -79,10 +79,10 @@ get_rules <- function(formula,
       rule.exec1 <- sample(rule.exec1, 300)
     }
     if(length(rule.exec2) > 1000){
-      rule.exec1 <- sample(rule.exec2, 1000)
+      rule.exec2 <- sample(rule.exec2, 1000)
     }
     if(length(rule.exec3) > 700){
-      rule.exec1 <- sample(rule.exec3, 700)
+      rule.exec3 <- sample(rule.exec3, 700)
     }
     rule.exec <- c(rule.exec1,rule.exec2,rule.exec3)
     remove(rule.exec1, rule.exec2, rule.exec3)
